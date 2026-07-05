@@ -9,8 +9,8 @@ console.log(n1%n2); //remainder **/
 /** console.log(++n1);  //13 - pre increment - first increment will happen then print
 console.log(n1++); //13 - post increment -- first print then increment
 console.log(n1); **/
-console.log(--n2);
-console.log(n2--);
-console.log(n2--);
-console.log(n2--);
-console.log(n2);
+console.log(--n2); //33
+console.log(n2--); //33
+console.log(n2--); //32
+console.log(n2--); //31
+console.log(n2); //30
