@@ -8,23 +8,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "type": "commonjs",
-  "devDependencies": {
-    "@playwright/test": "^1.61.1",
-    "playwright": "^1.61.1"
-  }
-}
-
-{
-  "name": "playwright_typescript",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "description": ""
 }
