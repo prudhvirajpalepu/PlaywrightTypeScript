@@ -1,3 +1,3 @@
-import { Person } from "./Person";
-let person1 = new Person("prudhvi", 30);
-person1.greet();
+import { Person } from "./classExample.js";
+let person = new Person("prudhvi", 30);
+person.greet();
