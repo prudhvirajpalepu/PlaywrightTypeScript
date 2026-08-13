@@ -1,6 +1,6 @@
-//An enum (short for enumeration) is a special feature in TypeScript that allows you to define a set
-//  of named constants. Using enums makes your code more readable, organized, and type-safe by 
-// replacing confusing "magic numbers" or strings with descriptive labels.
+//An enum (short for enumeration) is a special feature in TypeScript that allows you to 
+// define a set of named constants. Using enums makes your code more readable, organized 
+// and type-safe by replacing confusing "magic numbers" or strings with descriptive labels.
 
 enum UserRole {
   Admin = "ADMIN",

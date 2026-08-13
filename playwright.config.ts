@@ -1,16 +1,36 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests/e2e',
-  timeout: 30_000,
-  retries: 1,
+  fullyParallel: true,
+  forbidOnly: false,
+  retries: 0,
+  workers: undefined,               // Auto workers
+
+  reporter: [
+    ['list'],
+    ['html', { open: 'never' }],
+    ['allure-playwright'],
+  ],
 
   use: {
-    headless: true,
-    baseURL: 'https://playwright.dev',
-    screenshot: 'only-on-failure',
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
   },
 
-  reporter: [['html'], ['list']],
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
+  ],
 });
