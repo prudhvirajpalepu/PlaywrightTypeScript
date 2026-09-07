@@ -18,6 +18,21 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
+/* configure projects for major environments 
+  projects: [
+    {
+      name: 'DEV',
+      use: { baseURL: 'https://dev.example.com', ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'QA',
+      use: { baseURL: 'https://qa.example.com', ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
+  ], */
 
   projects: [
     {
@@ -33,4 +48,6 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
   ],
+
 });
+

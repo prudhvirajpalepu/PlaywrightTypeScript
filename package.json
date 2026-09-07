@@ -21,6 +21,7 @@
   "license": "ISC",
   "description": "Playwright + TypeScript test automation",
   "devDependencies": {
+    "@playwright/mcp": "^0.0.79",
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.5",
     "allure-commandline": "^2.32.0",

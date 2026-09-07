@@ -1,0 +1,61 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Dropdown.spec.ts >> Dropdown tests >> verify user is able to select an option from dropdown
+- Location: tests\e2e\Dropdown.spec.ts:10:9
+
+# Error details
+
+```
+Error: expect(locator).toHaveValue(expected) failed
+
+Locator:  getByTestId('standard-select')
+Expected: "Red"
+Received: "red"
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveValue" with timeout 5000ms
+  - waiting for getByTestId('standard-select')
+    11 × locator resolved to <select id="standard-select" name="standard-select" aria-label="Standard select" data-testid="standard-select" class="input-field practice-select">…</select>
+       - unexpected value "red"
+
+```
+
+```yaml
+- combobox "Standard select":
+  - option "choose…"
+  - option "Red" [selected]
+  - option "Green"
+  - option "Blue"
+```
+
+# Test source
+
+```ts
+  1  | import {test, expect} from '@playwright/test'
+  2  | 
+  3  | test.describe('Dropdown tests', () => {
+  4  | 
+  5  |      test.beforeEach('to launch browser', async({page}) => {
+  6  |         await page.goto("https://www.sreenidhirajakrishnan.com/practice#section-1");
+  7  |         await expect(page).toHaveURL(/.*practice.*/);
+  8  |     });
+  9  | 
+  10 |     test ('verify user is able to select an option from dropdown', async({page}) => {
+  11 |         const dropdown = page.getByTestId("standard-select");
+  12 |         await dropdown.selectOption("Red");
+> 13 |         await expect(dropdown).toHaveValue("Red");
+     |                                ^ Error: expect(locator).toHaveValue(expected) failed
+  14 |     });
+  15 | 
+  16 | });
+  17 | 
+  18 | 
+  19 | 
+```
